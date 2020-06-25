@@ -1,4 +1,7 @@
+
 ```SQL
+-- 30, 40, 90번 부서원의 부서번호, 이름, 급여, GRADE를 조회하여 부서번호 순으로 정렬
+-- GRADE : 급여가 3000보다 작으면 'A', 3000이상 7500미만이면 'B', 7500이상이면 'C'로 표시
 SELECT DEPARTMENT_ID, FIRST_NAME, SALARY,
 DECODE(TRUNC(SALARY / 3000), 0, 'A', DECODE(TRUNC(SALARY / 7500), 0, 'B', 'C')) AS "GRADE" 
 FROM EMPLOYEES WHERE DEPARTMENT_ID IN (30, 40, 90) ORDER BY 1;
